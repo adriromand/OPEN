@@ -1,0 +1,836 @@
+---
+title: "Le stockage de l'information numérique"
+author: "Adrien ROMAND"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  pdf_document:
+  theme: united
+  toc: true
+  toc_depth : 2
+  number_sections: true
+  toc_float:
+    collapsed: true
+    smooth_scroll: true
+header-includes:
+  - \usepackage{graphicx}
+  - \usepackage{titling}
+  - \pretitle{\begin{center}\LARGE}
+  - \posttitle{\end{center}\vspace{1cm}\begin{center}\includegraphics[width= 12cm,height=12cm]{page_garde.png}\end{center}}
+  - \preauthor{\begin{center}\Large\vspace{1cm}}
+  - \postauthor{\end{center}\vspace{0cm}}
+  - \predate{\begin{center}\large\vspace{0cm}}
+  - \postdate{\end{center}}
+  - \usepackage{fancyhdr}
+  - \usepackage{graphicx}
+  - \pagestyle{fancy}
+  - \renewcommand{\headrulewidth}{0pt}
+  - \fancyhf{}     
+  - \fancyhead[R]{\includegraphics[width=2cm]{isara.png}}
+  - \fancyfoot[C]{\thepage}
+  - |
+    \fancypagestyle{plain}{
+      \fancyhf{}
+      \renewcommand{\headrulewidth}{0pt}
+      \fancyhead[R]{\includegraphics[width=2cm]{isara.png}} % Définir ici votre en-tête droit pour la page de garde
+    }
+  
+bibliography: biblio/biblio2.bib
+csl: "biblio/isara-iso-690.csl"
+---
+\newpage
+\renewcommand{\contentsname}{Table des matières}
+\tableofcontents
+
+\newpage
+
+L'information : Tout événement, tout fait, tout jugement porté à la
+connaissance d\'un public plus ou moins large, sous forme d\'images, de
+textes, de discours, de sons. [@larousse_definitions_2024]
+
+Informatique : contraction linguistique d'information et d'automatique.
+Qui permet à tout élément de connaissance d\'être représenté à l\'aide
+de conventions pour être conservé, traité ou communiqué. [@larousse_definitions_2024-1]
+
+\newpage
+
+\section{Introduction}
+
+L'être humain communique et envoie de l'information pour interagir avec
+son environnement. Au-delà des systèmes de mémoire liés aux réseaux
+neuronaux du cerveau, l'Homme utilise des supports pour retranscrire
+cette information et la stocker pour la conserver.
+
+Au moins depuis la grotte de Lascaux du Paléolithique, des supports
+matériels et solides sont utilisés pour représenter et conserver des
+symboles qui portent une information. On retrouve entre autres la
+peinture, l'écriture ainsi qu'un grand nombre d'artefacts.
+
+En résumé, stocker de l'information correspond à la conservation de
+données ou de connaissances auxquelles il est possible d'accéder
+ultérieurement. Cela peut se faire de différentes manières : la mémoire
+humaine, le stockage matériel, ou le stockage numérique.
+
+Avec l'avènement de la technologie au 20ème siècle, l'information s'est
+dématérialisée pour prendre une forme numérique qui permet de stocker,
+transmettre, modifier un signal plus simplement que de manière
+analogique.
+
+En tant qu'individu du 21ème siècle, le numérique est au cœur de mon
+quotidien. Avec la numérisation croissante de notre vie, les besoins en
+stockage de données ont considérablement augmenté. À titre personnel, je
+stocke tellement d'information sur mon cloud que l'espace de stockage
+global est systématiquement saturé. Ne voulant pas payer de supplément
+aux fournisseurs de ce service, je me satisfais de l'espace disponible
+sur le disque dur de mon appareil.
+
+Jusqu'à la très récente situation du vol de mon ordinateur, je ne
+questionnais pas sur la pertinence de ce choix. C'est seulement après
+avoir tristement perdu une quantité dramatique de données personnelles
+(photos, documents, cours et vidéos) que je me suis posé la question
+suivante : Comment puis-je créer de l'espace de stockage pour mes
+données gratuitement et localement ? Avant tout, est-ce possible, et si
+oui, qu'est-ce que j'attends pour le faire ?
+
+Comme vous l'aurez compris, ce document présente les différentes
+possibilités de stocker de l'information numérique pour tenter de
+répondre à mes questionnements introspectifs dans une démarche très
+personnelle.
+
+Je vous souhaite donc la bienvenue dans le stockage textuel et numérique
+de mon raisonnement réflexif sur le stockage d'informations numériques.
+
+\newpage
+
+\section{Principe du stockage numérique et fonctionnement}
+
+« Stocker de l'information et de calculer remonte au moins à la machine
+de Pascal » [@haroche_physique_2013].
+
+« Le stockage de données consiste à conserver des informations à l'aide
+d'une technologie spécifiquement développée pour préserver ces données
+en les maintenant aussi accessibles que nécessaire »
+[@hewlett_packard_entreprise_quest-ce_2024].
+
+Comment cela fonctionne-t-il ?
+
+Tout un chacun a pu observer l'apparition de « ko », « Mo », « Go » ou
+« To » dans la description des fichiers numériques présents localement
+sur différents appareils électroniques. Ces grandeurs font référence à
+l'unité élémentaire en informatique, le bit. Ce dernier est basé sur le
+binaire, il peut prendre la valeur de 0 ou 1. Définit comme la quantité
+minimale d\'information transmise par un message, le bit régit le
+principe fondamental du stockage informatique. Cependant, il ne peut
+contenir que deux valeurs. Du fait de sa faible capacité, le bit ne
+permet pas à lui seul de représenter une quantité significative de
+données. C'est pour cette raison que l'unité d'octet a été défini comme
+la succession de huit bits (du préfixe « oct- » signifiant huit, et du
+suffixe « -et », petit). On retrouve ensuite différents ordres de
+grandeur tels que le kilooctet ou ko (10\^3), le mégaoctet ou Mo
+(10\^6), le gigaoctet ou Go (10\^9) et le téraoctet ou To (10\^12).
+
+[@methode_physique_stockage_2023]
+
+Intéressons-nous maintenant à la numérisation d'une information en
+codage binaire. En ce qui concerne la transcription d'un signal
+analogique en signal numérique, la valeur prise par un bit dépend des
+variations de ce signal. Ce dernier est découpé en petites variations de
+temps permettant de le quantifier selon un nombre de valeurs définies
+(bits). De manière générale, deux états stables sont identifiés pour
+représenter les valeurs 0 et 1. Par convention, un niveau bas représente
+le 0 et un niveau élevé le 1. La manifestation de ces états (magnétisme,
+charge électrique ou tout autre phénomène physique) est captée par le
+dispositif technologique associé au support de stockage avant d'être
+transcrite numériquement. Par exemple, un bit 0 pourrait être interprété
+comme « absence de quelque chose » et le bit 1 comme « présence de
+quelque chose » [@sciences_physiques_transmettre_2016].
+
+Chaque séquence numérique binaire ainsi obtenue correspond à un code
+propre à chaque élément enregistré.
+
+Le décodage du binaire est réalisé par l'unité centrale de traitement
+(CPU) et les logiciels de l\'ordinateur. Une partie de la séquence de
+bits indique le type de fichier et fournit des informations sur sa
+structure interne. Qu'il s'agisse d'en-têtes, de formats standardisés,
+d'extensions, de signatures magiques ou de métadonnées, cela permet aux
+logiciels de reconnaître le type de fichier et de commencer le processus
+de décodage approprié. Ensuite, ces données sont interprétées par les
+logiciels et converties en une forme compréhensible pour l\'utilisateur
+via une interface.
+
+Les ordinateurs utilisent différents types de systèmes de stockage qui
+utilisent des méthodes physiques différentes pour enregistrer des
+données et représenter les valeurs binaires.
+
+Lors de l'inscription d'une donnée sur un système de stockage, le
+système d\'exploitation (Windows, MacOs ou Linux) utilise des appels
+système spécifiques pour transmettre les données binaires du fichier au
+contrôleur de stockage du disque. Ce dernier convertit les données
+binaires en signaux, dont la nature dépend du type de support. Le
+système d\'exploitation de l\'ordinateur, qui est responsable de la
+gestion des fichiers sur le système de stockage, alloue un espace
+spécifique et suffisant sur son support de stockage via une table de
+correspondance. En associant les noms de fichiers (par leurs séquences
+de code binaire d'identification) aux emplacements physiques sur le
+disque (aussi encryptés par un code), il devient possible de localiser
+et de gérer les fichiers.
+
+D'autre part, lorsqu\'un fichier est lu à partir du disque,
+l\'ordinateur lit les données binaires à partir des secteurs
+correspondants et les convertit en données utilisables par le logiciel.
+
+Par ailleurs, dans le cas où un document est créé numériquement, il est
+encodé suivant le même système de numérisation. À cet effet, chaque
+caractère, pixel, ou élément de données est représenté par une séquence
+de bits. Une fois encodé en binaire, le document est stocké de la même
+manière que nous l'avons l'évoqué précédemment
+
+À mesure que de nouveaux fichiers sont écrits, l\'espace disque
+disponible diminue.
+
+Tout appareil capable d'utiliser des supports de stockage d'information
+numérique et qui est connecté au réseau internet peut être utilisé pour
+héberger et partager des données sous la forme binaire, qui sont ensuite
+décodées et interprétées par l\'ordinateur de réception de manière
+similaire. Mon ordinateur comme le vôtre héberge de l'information
+puisqu'il en produit et en stocke. D'autres ordinateurs peuvent le
+visiter grâce à l'adresse IP de l'ordinateur qui permet son
+identification sur internet. [@bongiraud_hygiene_2024].
+
+Dans le contexte actuel où les médias, la culture, le social se
+dématérialise, les flux de données qui circulent informatiquement sont
+torrentielles. Cependant, pour traiter le gigantisme des données
+disponibles, il faut avoir la possibilité d'en enregistrer des
+échantillons. Mais alors, quelles solutions s'offrent à nous pour
+stocker ces quantités impressionnantes d'information ?
+
+\newpage
+
+\section{Différentes manières de stocker le flux d'informations}
+
+Dans les systèmes de stockage numérique, les valeurs 0 et 1 sont
+attribuées en fonction de l\'état physique de chaque composant de
+stockage. Regardons plus en détail le fonctionnement technologiques des
+différents supports de stockage, ainsi que les avantages et
+inconvénients associés.
+
+\subsection{RAM (Random Access Memory)}
+
+[Description :]{.underline} La RAM est un type de mémoire volatile qui
+stocke temporairement les données et les programmes en cours
+d\'utilisation par le processeur.
+
+[Fonctionnement]{.underline} : La valeur des bits dans la RAM sont
+déterminées par l\'état de charge électrique dans chaque cellule de
+mémoire volatile. Une cellule chargée représente un bit 1, tandis
+qu\'une cellule déchargée représente un bit 0.
+
+[Avantages :]{.underline} L'accès aux données est rapide, idéal pour le
+stockage temporaire. De plus, tout type de donnée peut être lu ou écrit
+rapidement.
+
+[Inconvénients :]{.underline} La capacité de stockage reste limitée par
+rapport aux autres formes de stockage. De plus, les données dans la RAM
+doivent être constamment rafraîchies car elles sont volatiles et perdent
+leur charge au fil du temps.
+
+\subsection{Mémoire cache}
+
+[Description]{.underline} : Utilisée dans les processeurs et les
+systèmes informatiques.
+
+[Fonctionnement]{.underline} : La mémoire cache est une mémoire volatile
+de haute vitesse intégrée à un processeur ou à un système informatique
+pour stocker temporairement des données.
+
+[Avantages]{.underline} : La mémoire cache permet un accès très rapide
+aux données. Elle réduit également le trafic de données sur les autres
+niveaux de mémoire ou sur le stockage principal, ce qui améliore les
+performances globales du système.
+
+[Inconvénients]{.underline} : Le coût par gigaoctet est plus élevé que
+d\'autres formes de stockage. De plus, la capacité de stockage est
+limitée par rapport à la RAM ou au stockage principal.
+
+\subsection{Mémoire morte (ROM - Read-Only Memory)}
+
+[Description]{.underline} : La mémoire morte est utilisée dans de
+nombreux appareils électroniques, dont les ordinateurs, les téléphones
+portables, les consoles de jeu et les systèmes embarqués. Elle permet à
+l\'appareil de démarrer et de fonctionner correctement en garantissant
+que les instructions et les paramètres essentiels soient accessibles dès
+que l\'appareil est mis sous tension.
+
+[Fonctionnement]{.underline} : La mémoire morte est une forme de
+stockage non volatile utilisée pour stocker des données en lecture
+seule. C'est-à-dire que la mémoire ROM est programmée une seule fois et
+de manière permanente pendant le processus de fabrication en utilisant
+des techniques telles que la  [photolithographie](https://www.techniques-ingenieur.fr/glossaire/photolithographie){style="color: blue"}
+ou la gravure laser. Elle est utilisée pour des programmes essentiels au
+fonctionnement de l'ordinateur et qui gèrent les composants
+électroniques et le système d\'exploitation. Par conséquent, elle ne
+peut pas être modifiée par l\'utilisateur final.
+
+[Avantages]{.underline} : Les données sont permanentes et ne sont pas
+perdues lorsque l\'alimentation est coupée. Cela permet de stocker des
+données critiques et des instructions système.
+
+[Inconvénients]{.underline} : Les données ne peuvent pas être modifiées
+une fois écrites. La capacité est donc limitée par rapport à d\'autres
+formes de stockage.
+
+\subsection{Mémoire de masse sur smartphone}
+
+[Description]{.underline} : Cette mémoire de masse est utilisée par les
+propriétaires de smartphones pour stocker des applications, des photos,
+des vidéos et d\'autres données.
+
+[Fonctionnement]{.underline} : Les smartphones utilisent généralement
+des puces de mémoire flash pour stocker des données telles que les
+applications, les photos, les vidéos et les fichiers multimédias. Pour
+enregistrer ces données, des tensions électriques spécifiques sont
+appliquées aux cellules de mémoire flash pour modifier leur état de
+charge électrique et représenter les données à écrire.
+
+[Avantages]{.underline} : Ce support portable permet un accès rapide aux
+données depuis un appareil mobile.
+
+[Inconvénients]{.underline} : La capacité de stockage est limitée par
+rapport à d\'autres dispositifs de stockage externes. Il est nécessaire
+de réaliser des sauvegardes régulières pour éviter la perte de données
+en cas de panne ou de perte de l\'appareil.
+
+\subsection{Disque SSD (Solid-State Drive)}
+
+[Description]{.underline} : Utilisé dans les ordinateurs, les
+ordinateurs portables et les appareils électroniques pour un stockage
+rapide et fiable des données.
+
+[Fonctionnement]{.underline} : Les disques SSD utilisent des cellules de
+mémoire flash qui stockent des données à l'aide de [transistors](https://www.electricity-magnetism.org/fr/transistor-a-effet-de-champ-fet/){style="color: blue"}
+à effet de champ.
+Ces derniers permettent de retenir une charge électrique. Lors de
+l\'écriture de données, un courant électrique est appliqué à chaque
+cellule pour charger ou décharger celle-ci, modifiant ainsi son état
+pour refléter la valeur du bit à stocker. La présence ou l\'absence de
+charge représente respectivement les bits 1 et 0.
+
+[Avantages]{.underline} : Grâce à cette technologie, l'accès aux données
+est rapide. Le disque SSD est peu sensible aux chocs et aux vibrations
+du fait de l'absence de pièces mobiles.
+
+[Inconvénients]{.underline} : En revanche, le coût par gigaoctet est
+plus élevé que pour les disques durs et la capacité de stockage est
+généralement inférieure.
+
+\subsection{Disque dur interne et disque dur externe (HDD)}
+
+[Description]{.underline} : Utilisés dans les ordinateurs de bureau, les
+ordinateurs portables et les serveurs, les disques durs externes sont
+souvent utilisés de pair avec le disque dur interne d'un ordinateur. Ils
+offrent une capacité de stockage à long terme (interne pour l'un,
+externe pour l'autre) allant de quelques gigaoctets à plusieurs
+téraoctets.
+
+[Fonctionnement]{.underline} : Sur un disque dur magnétique, les données
+sont stockées grâce à des têtes de lecture/écriture qui utilisent des
+aimants pour polariser de minuscules régions magnétiques sur des
+plateaux en rotation. Un champ magnétique dans une direction représente
+un bit 1, tandis qu\'un champ magnétique dans l\'autre direction
+représente un bit 0. En somme, une tête d'écriture applique un champ
+magnétique à une région du disque, ce qui permet de transcrire et écrire
+des données sur le disque.
+
+[Avantages]{.underline} : Ces support sont caractérisés par une grande
+capacité de stockage et un coût par gigaoctet relativement faible.
+
+[Inconvénients]{.underline} : En comparaison avec les disques SSD, le
+temps d\'accès aux données est plus long et la vitesse de
+lecture/écriture est plus lente. Les disques durs sont également plus
+sensibles aux chocs et aux vibrations.
+
+\subsection{Carte mémoire}
+
+[Description]{.underline} : On l'utilise souvent pour étendre la
+capacité de stockage d'un appareil. À cet effet, elle est principalement
+retrouvée dans les appareils électroniques pour stocker des photos, des
+vidéos, de la musique et d\'autres données de manière portable et
+facilement transférable.
+
+[Fonctionnement]{.underline} : Les cartes mémoire utilisent généralement
+des puces de mémoire flash pour stocker des données de manière
+électronique. L'application d'une tension électrique aux cellules de
+mémoire flash modifie la charge électrique des cellules permettant de
+représenter la valeur des bits ainsi transcrits sur le support.
+
+[Avantages]{.underline} : La carte mémoire fonctionne sans alimentation
+électrique et son petit format est un avantage pour sa portabilité.
+
+[Inconvénients]{.underline} : La capacité de stockage reste limitée par
+rapport aux disques durs. D'autre part, ce support peut être fragile et
+sujet à la corruption des données.
+
+\subsection{Stockages optiques (DVD, CD, Blue-Ray)}
+
+[Description]{.underline} : Utilisé pour stocker et distribuer des
+films, de la musique, des logiciels et des jeux vidéo.
+
+[Fonctionnement]{.underline} : Les disques optiques utilisent des lasers
+pour graver des motifs sur une couche photosensible pour écrire des
+données et réfléchissante pour stocker des données. Lors de l\'écriture
+de données, un laser à haute intensité est utilisé pour chauffer la
+couche, provoquant ainsi des changements permanents dans sa structure
+qui représentent les données à enregistrer. Pour la lecture du disque un
+faisceau laser se reflète sur le support. Quand il passe sur un creux,
+il met plus de temps à revenir au capteur. Ce retard dans le retour
+lumineux ou ce déphasage fait que pour la période de lecture d'un signal
+de référence, un signal correspondant à un creux ne sera pas lu
+entièrement. De ce fait, le retour lumineux additif sera moins intense.
+Ensuite, le système binaire affiche 0 pour un signal moins intense (donc
+pas de creux) et 1 pour le signal de référence. Cette info est stockée
+sur le support.
+
+Le paramètre qui différencie le DVD du CD et du Blue Ray correspond à la
+longueur d'onde utilisée pour le laser. Une longueur d'onde plus faible
+implique une diffraction plus faible et donc la possibilité de lire des
+motifs plus petits et rapprochés. De cette façon il est possible
+d'obtenir davantage d'information avec un Blu-Ray qu'avec un DVD ou un
+CD :
+
+CD: 780nm (750Mo) ; DVD: 650nm (4,4 Go); Blu-Ray: 405nm (23Go).
+
+[@sciences_physiques_transmettre_2016].
+
+[Avantages]{.underline} : Ces disques sont caractérisés par une bonne
+durabilité des données. Ils représentent un moyen de stockage à long
+terme et compatible avec une grande variété d'appareils de lecture. Par
+ailleurs, le coût par support est relativement faible.
+
+[Inconvénients]{.underline} : Du fait d'une gravure physique, la
+capacité de stockage est limitée par l'espace physique disponible sur
+l'aire du disque. Ce système de stockage implique également un temps
+d\'accès aux données plus long et une vitesse de transfert plus lente.
+
+\subsection{Stockage sur disque optique réinscriptible (CD-RW, DVD-RW)}
+
+[Description]{.underline} : Ce type de disque permet de graver et
+réécrire des données telles que des fichiers, des vidéos et de la
+musique.
+
+[Fonctionnement]{.underline} : Ces disques optiques permettent
+d\'effacer et de réécrire des données plusieurs fois en utilisant des
+techniques de gravure optique.
+
+[Avantages]{.underline} : Cette technologie permet de réutiliser le
+support pour stocker de nouvelles données et assure une meilleure
+durabilité des données par rapport aux disques optiques enregistrables.
+
+[Inconvénients]{.underline} : La capacité de stockage est limitée par
+rapport à d\'autres formes de stockage réinscriptible et le coût est
+potentiellement plus élevé que les supports optiques enregistrables.
+
+\subsection{Disquettes}
+
+[Description]{.underline} : D'importance historique, les disquettes sont
+des supports de stockage magnétique qui ont été utilisés dans les
+premiers ordinateurs personnels.
+
+[Fonctionnement]{.underline} : Une disquette est généralement composée
+d\'un disque magnétique flexible enfermé dans une enveloppe protectrice.
+Les données sont inscrites par des têtes d\'enregistrement magnétique
+qui appliquent des champs magnétiques spécifiques à des sections
+spécifiques du disque. Cela modifie l\'alignement des particules
+magnétiques et permet de représenter les données à enregistrer.
+
+[Avantages]{.underline} : Pour les premières années de l'informatique
+personnelle, les disquettes possédaient une capacité suffisante pour
+stocker des fichiers et des programmes simples. De plus leur facilité
+d\'utilisation et de transport leur donnait un avantage par rapport à
+l'alternative des bandes magnétiques.
+
+[Inconvénients]{.underline} : Aujourd'hui, leur capacité de stockage est
+très limitée par rapport aux supports modernes. Les disquettes sont
+également sensibles aux dommages magnétiques et à la dégradation
+physique.
+
+\subsection{Cassettes magnétiques}
+
+[Description]{.underline} : Très populaires dans les années 1970, 1980
+et 1990, les cassettes étaient utilisées pour le stockage de données
+informatiques, la sauvegarde de fichiers mais aussi pour
+l\'enregistrement et la lecture audio et vidéo.
+
+[Fonctionnement]{.underline} : Les cassettes magnétiques utilisent une
+bande magnétique enroulée à l\'intérieur d\'une cassette. Les données
+sont enregistrées sous forme de variations magnétiques sur la bande.
+
+[Avantages]{.underline} : Le coût est relativement faible par rapport à
+d\'autres supports de stockage.
+
+[Inconvénients]{.underline} : Le temps d\'accès aux données est
+relativement long par rapport aux supports de stockage modernes. De
+plus, ce support est moins pratique que les supports de stockage plus
+récents en raison de la nécessité de rembobiner et de rechercher
+manuellement les données. Enfin, la cassette est sensible à la
+dégradation magnétique et à l\'usure de la bande.
+
+\subsection{Clé USB}
+
+[Description]{.underline} : Utilisée par les individus et les
+professionnels pour le stockage portable et le transfert de données
+entre différents appareils.
+
+[Fonctionnement]{.underline} : Les clés USB utilisent des puces de
+mémoire flash pour stocker des données de manière électronique.
+C'est-à-dire que des tensions électriques spécifiques sont appliquées
+aux cellules de mémoire flash, pour modifier leur état de charge
+électrique de façon à représenter les données à écrire.
+
+[Avantages]{.underline} : Fonctionnant sans alimentation électrique et
+caractérisée par un petit format, la clé USB est connue pour sa
+portabilité fonctionnelle.
+
+[Inconvénients]{.underline} : En revanche, sa capacité de stockage est
+limitée par rapport aux disques durs et aux SSD. La clé USB est aussi
+fragile et sujette au vol et à la corruption des données.
+
+\subsection{Cloud}
+
+[Description]{.underline} : Utilisé par les individus et les entreprises
+pour stocker, sauvegarder et partager des données via Internet. On
+retrouve notamment OneDrive pour les appareils Windows, Google Drive
+pour les appareils Android et Cloud pour les appareils Apple.
+
+[Fonctionnement]{.underline} : Il s'agit là du stockage en ligne. Comme
+son nom l'indique, le « nuage » est « volatile ». Il offre la
+possibilité de stocker des données par réplication et sauvegarde sur des
+serveurs distants accessibles via Internet. Parfois intégré aux
+appareils, ce service permet une sauvegarde et une synchronisation
+automatiquement des données.
+
+[Avantages]{.underline} : Accès aux données de n\'importe où avec une
+connexion Internet. Évite le besoin d\'investir dans du matériel de
+stockage local. Le cloud fonctionne comme une extension de l'espace de
+stockage de l'appareil électronique.
+
+[Inconvénient]{.underline} : À contrario, ces services ne sont pas
+disponibles comme les applications par défaut de nos appareils
+puisqu'ils nécessitent une connexion Internet. Par ailleurs, les clouds
+sont la propriété d'entreprises privées tierces qui gèrent ces services
+indépendamment de notre outil de travail. Ces entreprises appliquent des
+limites dans la gratuité de leurs services ce qui restreint le volume de
+stockage utilisable sans frais. D'autre part, de nombreuses
+préoccupations sont mises en avant en matière de confidentialité et de
+sécurité des données. En effet, lors de l'utilisation de ces clouds,
+l'utilisateur doit se soumettre à des conditions d'utilisation qui
+entravent la vie privée des données de l'utilisateur (cookies, analyses
+des données personnelles, suivi d'activité) et doit accepter que les
+droits de gestion des documents enregistrés appartiennent, sans
+condition, aux entreprises propriétaires.
+
+\subsection{Datacenter}
+
+[Description]{.underline} : Les entreprises et les fournisseurs de
+services cloud utilisent des datacenters pour héberger et gérer de
+grandes quantités de données et de services en ligne.
+
+[Fonctionnement]{.underline} : Les datacenters sont des installations
+regroupant de nombreux serveurs et dispositifs de stockage pour héberger
+et gérer des données à grande échelle. Le RAID (Redundant Array of
+Independent Disks) est une technologie de stockage couramment utilisée
+dans les datacenters puisqu'elle consiste en la combinaison de plusieurs
+disques durs physiques pour un seul système logique ce qui améliore la
+performance, la capacité de stockage, la tolérance aux pannes et la
+redondance des données (c'est-à-dire qu'elles sont dupliquées pour pour
+protéger de la perte de données en cas de défaillance d\'un disque).
+
+[Avantages]{.underline} : Du fait de leurs installations, les
+datacenters ont une grande capacité de stockage et une puissance de
+traitement conséquente. Ils proposent de nombreux services dont la
+sauvegarde, la sécurité et la gestion des données professionnels ou
+privées.
+
+[Inconvénients]{.underline} : Les datacenters impliquent des coûts
+élevés liés aux installations, la maintenance et le refroidissement
+des équipements informatiques et des serveurs. Leur utilisation dépend
+entièrement à une connectivité réseau fiable.
+
+\subsection{Stockage en réseau (NAS - Network-Attached Storage)}
+
+[Description]{.underline} : Utilisé dans les foyers et les entreprises
+pour stocker, sauvegarder et partager des fichiers sur un réseau local.
+
+[Fonctionnement]{.underline} : Le stockage en réseau consiste à
+connecter un dispositif de stockage dédié à un réseau local pour
+partager et sauvegarder des fichiers. Concrètement, via le réseau local,
+les données sont écrites sur le périphérique NAS où elles sont
+enregistrées sur des disques durs ou des SSD. Par la suite, les
+utilisateurs peuvent accéder à ces données à partir de différents
+appareils connectés au réseau.
+
+[Avantages]{.underline} : Ce support assure un partage facile des
+fichiers entre plusieurs utilisateurs sur le réseau. Fonctions de
+sauvegarde automatique et de redondance des données.
+
+[Inconvénients]{.underline} : Il y a nécessairement un coût initial lié
+à l'achat et à la configuration du matériel. De plus, ce système dépend
+entièrement de la fonctionnalité d'un seul réseau local.
+
+\subsection{Stockage sur bande magnétique}
+
+[Description]{.underline} : Utilisé dans les entreprises et les
+organisations pour les sauvegardes de données à grande échelle et les
+archives à long terme.
+
+[Fonctionnement]{.underline} : Les données sont stockées sous forme
+magnétique sur une bande composée de particules magnétiques et enroulée
+à l\'intérieur d\'une cassette. Lors de l\'écriture de données, des
+têtes d\'enregistrement appliquent des champs magnétiques spécifiques à
+des sections spécifiques de la bande, modifiant ainsi l\'alignement des
+particules magnétiques en fonction des données à enregistrer.
+
+[Avantages]{.underline} : Le coût par gigaoctet est très bas et la
+capacité de stockage est importante.
+
+[Inconvénients]{.underline} : Le temps d\'accès aux données est long et
+la vitesse de transfert est lente. De plus ce support est sensible à la
+dégradation magnétique et à l\'usure.
+
+\subsection{Stockage magnétique holographique}
+
+[Description]{.underline} : Utilisé dans les domaines de la recherche,
+de l\'archivage à grande échelle et du stockage de données à haute
+densité.
+
+[Fonctionnement]{.underline} : Les données sont stockées sous forme de
+motifs holographiques dans un matériau photosensible. Les hologrammes
+sont créés par l\'interaction de deux faisceaux laser (un pour le signal
+et un pour la référence). Lors de l\'écriture de données, ces faisceaux
+sont utilisés pour créer un motif d\'interférence holographique dans le
+matériau photosensible, enregistrant ainsi les données.
+
+[Avantages]{.underline} : Ce système doté d'une très grande capacité de
+stockage permet une lecture et une écriture des données à très haute
+vitesse.
+
+[Inconvénients]{.underline} : Cette technologie est limitée sur le
+marché et coûteuse car encore en développement.
+
+Chaque type de stockage a ses propres caractéristiques, avantages et
+inconvénients, et peut être utilisé dans des contextes spécifiques en
+fonction des exigences applicables. Cependant, toutes ces alternatives
+impliquent, dans diverses mesures, des coûts financiers et des limites
+de stockage. N'existerait-il pas d'autres manières de stocker de
+l'information sans limite et sans contrainte ?
+
+Chacun de ces supports de stockage a des caractéristiques et des
+méthodes d\'écriture spécifiques, mais tous visent à stocker et à
+récupérer des données de manière efficace et fiable pour répondre aux
+besoins des utilisateurs finaux.
+
+\newpage
+
+\section{Idées et innovations pour stocker de l'information}
+
+Intéressons-nous à l'utilisation simple de technologies
+existantes pour créer de l'espace de stockage.
+
+\subsection{Les pixels d'une vidéo youtube}
+
+Une vidéo numérique, qui est une succession d'images numériques, est
+graphiquement définie par des pixels. Une personne adepte d'informatique
+a eu la bonne idée d'utiliser ce principe pour stocker ses données sans
+limite. Malheureusement, je ne suis pas parvenu a retrouvé la source de
+cet exemple, nous appellerons donc cette personne Bob. Pour réaliser
+cette opération, Bob donc, a attribué une séquence binaire à chaque
+pixel. Limité par la résolution (qui est directement associée au nombre
+de pixels) du format YouTube et la définition de l'image (correspondant
+à l'aire de l'image mesurée en pixels), il a généré une vidéo live
+ininterrompue. Cela lui a permis d'avoir une nouvelle image (par
+fraction de temps de défilement des images d'une vidéo YouTube) à
+l'infinie puisque sa vidéo n'est pas temporellement limitée. C'est donc
+par une méthode de transcription que Bob est parvenu à encoder les bits
+contenant ses données en pixels qu'il a ensuite implanté dans une vidéo
+YouTube. Cette astuce lui permet aujourd'hui de stocker des informations
+sans limite et sans frais. Cependant, la vidéo ayant été diffusée au
+public, il est possible que la sécurité de ses données ait été
+compromise. Quoiqu'il en soit, l'idée était ingénieuse et je la garde en
+mémoire.
+
+Il existe sans doute d'autres astuces pour profiter librement d'un
+stockage de données à partir d'outils déjà existants. Cependant, mes
+recherches bibliographiques n'ont pas été assez approfondies pour
+permettre l'identification d'autres méthodes. En revanche, la
+documentation sur le sujet du stockage numérique a présenté diverses
+technologies innovantes et prometteuses.
+
+\subsection{Codage ADN}
+
+De l'ADN ? C'est bien cela, la biologie est étonnante !
+
+Grâce aux recherches de différents laboratoires du CNRS, il est
+aujourd'hui possible d'utiliser des séquences d\'ADN synthétiques pour
+représenter des informations numériques. Il est évident que cette
+technologie offre un potentiel révolutionnaire en matière de stockage de
+données à long terme, avec une densité de stockage extrêmement élevée et
+une durabilité exceptionnelle. En effet, dans un seul gramme d'ADN on
+pourrait stocker l'équivalent de toutes les données d'un data center. De
+plus, encapsulé à l'abris de l'eau, la lumière et l'oxygène, cet ADN
+pourrait être conservé sur une durée extrêmement longue (de 500 à 1000
+années).
+
+Le principe de cet encodage est le suivant. Les données représentées au
+format de séquence binaire sont transformées en une séquence ADN selon
+les bases nucléiques (A, C, T et G). C'est la combinaison de la
+technique de séquençage PCR et d'algorithmes d'encodage qui permettent
+cette opération.
+
+Par ailleurs, n'étant qu'à ses prémisses, ce processus est très coûteux
+et très long à réaliser. À titre d'exemple, pour écrire un bit de
+données sur l'ADN il faut une centaine de secondes. En considérant
+qu'une image numérique représente plusieurs millions de bits, on peut
+imaginer le temps qui serait nécessaire au stockage d'une simple image.
+
+[@le_blob_ladn_2023].
+
+Pour répondre à l'afflux croissant des données numérique, cette
+technologie représente une véritable opportunité pour répondre aux
+besoins en termes de stockage. François Képès, Biologiste et membre de 
+l'Académie des technologies s'exprime sur l'information qui circule
+numériquement: « Aujourd'hui, on estime qu'il y a
+autant de données numériques que de grains de sables sur la Terre » [@le_blob_ladn_2023].
+
+\subsection{Stockage photochromatique}
+
+La chimie a également réalisé des prouesses techniques époustouflantes
+dans le domaine du stockage d'information avec la formation d'hybrides
+destinés à stocker optiquement de l'information.
+
+L'utilisation de clusters de titane modifiables et des dendrimères avec
+des groupes d\'alcool à leurs extrémités permettrait d'imprimer
+optiquement des données et de stocker de l'information. En effet, les
+grappes de titane sont modifiables en surface. Il est possible de
+remplacer les groupes éthoxy par des groupes alcool. Ensuite, mélangés
+avec des dendrimères, ces clusters modifiés forment un réseau
+nanostructuré après évaporation du solvant. Puis, en remplaçant les
+groupes alcool par des groupes polymérisables, on obtient un réseau
+hybride qui peut être agencé en pièces monolithiques.
+
+Cela facilite la mise en forme du matériau et le contrôle de sa
+perméabilité. De plus, les fonctionnalités minérales apportent des
+propriétés telles que la résistance mécanique et la capacité
+d\'absorption de la lumière. Par exemple, lorsque ce matériau est
+irradié par un laser, le titane subit un changement d\'état d\'oxydation
+qui entraîne une forte absorption de la lumière rouge. Cela permet
+d\'imprimer optiquement des données sur le matériau et de stocker des
+informations. En résumé, il est possible de créer un support capable
+d\'enregistrer optiquement des informations en manipulant les propriétés
+chimiques et structurelles du matériau.
+
+[@sanchez_chimie_2012].
+
+\subsection{Le bit quantique}
+
+Les chercheurs du MIT et de l'Université de Cambridge ont développé une
+solution innovante pour transférer de l'information via la lumière sous
+la forme de bits quantiques ou qubits. Un qubit, ou bit quantique, est
+l'unité de base de l'information quantique. Il peut être dans un état de
+superposition, ce qui veut dire qu'il peut être à la fois dans l'état 0
+et 1 en même temps, contrairement à un bit classique qui ne peut être
+que dans un état à la fois. L'intrication ou la corrélation de plusieurs
+qbits permet de partager beaucoup plus d'informations que les bits
+associés à l'informatique conventionnelle. Le dispositif est basé sur un
+« microchiplet », un petit circuit intégré qui peut être combiné avec
+d'autres pour former un circuit plus complexe. Ici, le microchiplet est
+en diamant et contient des atomes d'étain qui servent de qubits. Un
+électron qui tourbillonne dans le diamant peut se coincer au niveau d'un
+atome d'étain et peut alors transférer son information au noyau d'étain
+en rotation.
+
+Par ailleurs, l'Internet quantique est encore à un stade très
+préliminaire de développement mais a un potentiel très puissant. Nous
+commençons à entendre parler des « ordinateurs quantiques » qui
+utilisent En somme, l'internet quantique permettrait notamment des
+communications ultra-rapides et ultra-sécurisées, car toute tentative
+d'interception de l'information perturberait les qubits et serait
+immédiatement détectée.
+
+[@haroche_physique_2013].
+
+\newpage
+
+\section{Conclusion}
+
+En résumé, il existe un large éventail de choix pour stocker de
+l\'information. Certains supports sont plus communs que d'autres et
+peuvent présenter des inconvénients majeurs.
+
+Les services dits « privés » proposent des supports payants ou
+partiellement gratuits, tels que les datacenters ou les clouds qui
+offrent des options premium payantes pour étendre la capacité de
+stockage et accéder à des fonctionnalités avancées.
+
+D'autres services sont limités par la capacité de stockage du support
+utilisé. Lorsqu'une grande quantité d'informations doit être stockée,
+les supports tels que la clé USB, la carte mémoire, le disque dur
+externe, les disques optiques, la disquette ou encore la cassette.
+
+De plus, les supports de stockages par défaut des appareils
+électroniques sont généralement limités par l'obsolescence de la machine
+dont la durée de vie dépasse rarement dix années.
+
+Il est cependant possible d'avoir recours à des solutions économiques et
+personnalisables pour répondre aux besoins de stockage et de partage de
+fichiers. Par exemple, créer son propre NAS à partir d\'un matériel
+existant ou d\'un mini-ordinateur permettant de stocker des données sur
+un réseau local en recyclant du matériel électronique et informatique
+sans engager de frais supplémentaires.
+
+Par ailleurs, l'ensemble de ces services sont énergivores. Du fait de
+leur processus de construction pour les uns (les supports physiques
+fonctionnant sans alimentation électrique), en raison de la nécessité
+d'une alimentation électrique importante pour les autres (Les
+datacenters couvrent déjà un millionième de la surface des terres
+émergées de la planète. En d'autres termes, si l'on rassemblait tous ces
+centres de données en un seul endroit caractérisé comme pays, ce serait
+le 5ème pays consommateur d'électricité au monde).
+
+[@le_blob_ladn_2023].
+
+Émergent alors de nouvelles technologies qui se rapproche du microcosme.
+La miniaturisation croissante des composants électroniques approche
+l'ordre du nanomètre, soit moins de dix fois plus gros qu'un atome
+[@dubois_fascinantes_2009]. De fait, la nanoélectronique, en suivant la
+voie de la miniaturisation, tend vers tend vers des propriétés
+physico-chimiques différentes du macrocosme et frôle la limite imposée
+par la physique quantique [@khalatbari_nanorevolution_2018].
+
+En somme, pour répondre aux besoins de stockage tout en limitant la
+consommation d'énergie et en réduisant la taille des supports, il
+semblerait que le stockage de l'information s'oriente vers les
+technologies du puissamment petit.
+
+Enfin, pour ma part, ne possédant pas de datacenter ni de centre de
+recherche me permettant d'étudier de nouvelles formes de stockage de
+l'information, je vais m'en aller recycler les anciens ordinateurs de
+mon entourage possédant un système d\'exploitation adapté aux NAS afin
+de les utiliser comme périphériques de stockage. Ensuite, il va me
+falloir configurer les paramètres réseau (paramètres de partage de
+fichier, d'accès au réseau et adresse IP statique) pour que le NAS
+utilisé soit accessible sur mon réseau local. Par la suite, il me faudra
+sécuriser mes données en activant les fonctionnalités de sécurité
+disponibles dans le système d\'exploitation du NAS, en utilisant des
+mots de passe forts et en configurant des pares-feux.
+
+Enfin, dans l'éventualité où je devrais stocker des informations
+hautement confidentielles, je devrais me pencher sur la possibilité
+d'avoir gratuitement accès à des pares-feux puissants, sans avoir besoin
+de le coder moi-même. Mais est-ce possible ?
+
+Voilà le sujet de ma prochaine réflexion.
+
+
+\newpage
+
+\section{Bibliographie}
+
+
